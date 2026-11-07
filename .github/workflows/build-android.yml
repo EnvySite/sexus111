@@ -56,7 +56,7 @@ jobs:
           ANDROID_HOME: /home/runner/Android/Sdk
         run: |
           chmod +x scripts/android/cmake_android.sh
-          ./scripts/android/cmake_android.sh arm64 sexus111 Release build_android
+          ./scripts/android/cmake_android.sh build_android sexus111 Release arm64
 
       - name: Upload
         uses: actions/upload-artifact@v4
