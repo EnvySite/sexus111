@@ -33,9 +33,9 @@ jobs:
           mkdir -p ~/Android/Sdk/ndk ~/Android/Sdk/build-tools ~/Android/Sdk/cmdline-tools
           
           cd ~/Android/Sdk/ndk
-          wget --quiet https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
-          unzip -q android-ndk-r25c-linux.zip
-          rm android-ndk-r25c-linux.zip
+          wget --quiet https://dl.google.com/android/repository/android-ndk-r26d-linux.zip
+          unzip -q android-ndk-r26d-linux.zip
+          rm android-ndk-r26d-linux.zip
           
           cd ~/Android/Sdk/build-tools
           wget --quiet https://dl.google.com/android/repository/build-tools_r30.0.3-linux.zip
@@ -54,6 +54,9 @@ jobs:
       - name: Build APK
         env:
           ANDROID_HOME: /home/runner/Android/Sdk
+          CFLAGS: "-U_LIBCPP_DEBUG"
+          CXXFLAGS: "-U_LIBCPP_DEBUG"
+          CPPFLAGS: "-U_LIBCPP_DEBUG"
         run: |
           chmod +x scripts/android/cmake_android.sh
           ./scripts/android/cmake_android.sh arm64 sexus111 Release build_android build_android
