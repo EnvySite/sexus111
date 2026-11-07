@@ -33,9 +33,9 @@ jobs:
           mkdir -p ~/Android/Sdk/ndk ~/Android/Sdk/build-tools ~/Android/Sdk/cmdline-tools
           
           cd ~/Android/Sdk/ndk
-          wget --quiet https://dl.google.com/android/repository/android-ndk-r26d-linux.zip
-          unzip -q android-ndk-r26d-linux.zip
-          rm android-ndk-r26d-linux.zip
+          wget --quiet https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
+          unzip -q android-ndk-r25c-linux.zip
+          rm android-ndk-r25c-linux.zip
           
           cd ~/Android/Sdk/build-tools
           wget --quiet https://dl.google.com/android/repository/build-tools_r30.0.3-linux.zip
